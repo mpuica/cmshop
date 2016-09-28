@@ -1,0 +1,22 @@
+# app/config/routing.yml
+home:
+    path:       /
+    defaults:  { _controller: AppBundle:Products:index }
+products:
+    path:       /products
+    defaults:  { _controller: AppBundle:Products:index }
+cart:
+    path:       /cart
+    defaults:  { _controller: AppBundle:Cart:index }
+cart_add_item:
+    path:       /cart/add/{id}
+    defaults:  { _controller: AppBundle:Cart:add }
+cart_remove_item:
+    path:       /cart/remove/{id}
+    defaults:  { _controller: AppBundle:Cart:remove }
+cart_qty_item:
+    path:       /cart/qty/{id}/{qty}
+    defaults:  { _controller: AppBundle:Cart:qty }
+cart_count:
+    path:       /cart/count/{id}
+    defaults:  { _controller: AppBundle:Cart:count }

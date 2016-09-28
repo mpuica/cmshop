@@ -1,0 +1,224 @@
+// Bootstrap library.
+@import '/bundles/bootstrap/less/bootstrap.less';
+@import 'variables.less';
+
+body{
+    font-family: Arial;
+    font-size: 12px;
+    color: @site-color;
+    background-color: @site-background-color;
+}
+
+a{
+    text-decoration:  none;
+    font-size: 24px;
+    color: @site-link-color;
+    &:hover{
+        text-decoration:  none;
+    }
+}
+
+.container{
+    width: 100%;
+}
+
+.loader {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) url('/img/ajax-loading.gif') 50% 50% no-repeat;
+}
+
+.header{
+    height: 75px;
+    background-color: @header-background-color;
+    color: @header-color;
+    font-size: 36px;
+
+    & .title{
+        padding: @grid-gutter-width/2;
+    }
+
+    & .cart{
+        text-align: right;
+
+        & .button-cart{
+            float: right;
+            display: block;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin: 8px;
+            height: 60px;
+            width: 60px;
+            opacity: .8;
+            &:hover{
+                opacity: 1;
+            }
+            & img{
+                margin-top: 16px;
+            }
+            & .cart-count{
+                position: absolute;
+                float: left;
+                text-align: right;
+                width: 36px;
+                top: 4px;
+                color: @site-link-color;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+
+.main{
+    margin-top: 75px;
+    & h1{
+        font-size: 32px;
+        color: @header-color;
+        padding: @grid-gutter-width/2;
+    }
+
+    & .cart{
+        width: 100%;
+        background-color: @cart-background-color;
+        padding: @grid-gutter-width /2;
+        margin: @grid-gutter-width /2;
+        border: 1px solid @border-color;
+    }
+
+    & .product{
+        background-color: @product-background-color;
+        padding: @grid-gutter-width /2;
+        margin: @grid-gutter-width /2;
+        border: 1px solid @border-color;
+        margin-bottom: @grid-gutter-width;
+
+        & .product-info{
+            & .product-name{
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 12px;
+                border-bottom:4px solid @site-background-color;
+            }
+
+            & .product-code{
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            & .product-price{
+                color: @site-link-color;
+                font-size: 32px;
+                margin-bottom: 12px;
+            }
+
+            & .product-order{
+                text-align: right;
+                & .button-order{
+                    opacity: .4;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    & .item{
+        text-align: center;
+        background-color: @product-background-color;
+        padding: @grid-gutter-width /2;
+        margin: @grid-gutter-width /2;
+        border: 1px solid @border-color;
+
+
+        & .item-name{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        & .item-remove{
+
+            & .button-delete{
+                display: block;
+                width: 32px;
+                height: 32px;
+            }
+        }
+        & .item-qty{
+            font-size: 24px;
+            .list-qty .active{
+                background-color: @site-link-color;
+                color: #ffffff;
+            }
+        }
+
+        & .item-label{
+            text-align: right;
+            font-size: 16px;
+            padding-top: 8px;
+        }
+
+        & .item-unit-price-value {
+            text-align: right;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        & .item-total-value{
+            text-align: right;
+            color: @site-link-color;
+            font-size: 32px;
+        }
+    }
+
+    & .back-to-products{
+        background-color: @cart-background-color;
+        height: 32px;
+    }
+    & .order-now{
+        text-align: right;
+        background-color: @cart-background-color;
+        height: 64px;
+
+        margin-bottom: 40px;
+        & .button-order-now{
+            display: block;
+            float: right;
+            height: 64px;
+            width: 64px;
+        }
+    }
+
+    & .totals {
+        text-align: right;
+        padding: @grid-gutter-width /2;
+        margin-right: @grid-gutter-width /4;
+        & .totals-label{
+            height: 40px;
+            background-color: @product-background-color;
+            text-align: right;
+            font-size: 16px;
+            padding-top: 8px;
+        }
+
+        & .totals-value {
+            height: 40px;
+            background-color: @product-background-color;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        & .totals-total-value{
+            height: 40px;
+            background-color: @product-background-color;
+            color: @site-link-color;
+            font-size: 32px;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Shopping cart</h1>
+    <div class="col-md-12 back-to-products">
+        <a class="button-back" href="/">
+            &lt; back to products
+        </a>
+    </div>
+    <div class="row items">
+        {%  for item in items %}
+            {% include 'AppBundle:cart:include.item.html.twig'
+                with {'item' : item,  'utils': utils, 'totals': totals} %}
+        {% endfor %}
+    </div>
+    <div class="row totals sub-total">
+        <div class="col-md-2 col-md-offset-8 totals-label">Subtotal:</div>
+        <div class="col-md-2 totals-value">{{ totals.subtotal|number_format(2, '.', ',')~' '~utils.currency_symbol }}</div>
+    </div>
+    <div class="row totals gst">
+        <div class="col-md-2 col-md-offset-8 totals-label">GST:</div>
+        <div class="col-md-2 totals-value ">{{ totals.total_gst|number_format(2, '.', ',')~' '~utils.currency_symbol }}</div>
+    </div>
+    <div class="row totals qst">
+        <div class="col-md-2 col-md-offset-8 totals-label">QST:</div>
+        <div class="col-md-2 totals-value">{{ totals.total_qst|number_format(2, '.', ',')~' '~utils.currency_symbol }}</div>
+    </div>
+    <div class="row totals total">
+        <div class="col-md-2 col-md-offset-8 totals-label">ORDER TOTAL:</div>
+        <div class="col-md-2 value totals-total-value">{{ totals.total|number_format(2, '.', ',')~' '~utils.currency_symbol }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 order-now">
+            <a class="button-order-now" href="#">
+                <img src="{{ asset('img/cmshop_order_now.png') }}" class="img-responsive">
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Products</h1>
+    <div class="row products">
+        {%  for product in products %}
+            {% include 'AppBundle:products:include.product.html.twig'
+                with {'product' : product, 'utils': utils} %}
+        {% endfor %}
+    </div>
+{% endblock %}

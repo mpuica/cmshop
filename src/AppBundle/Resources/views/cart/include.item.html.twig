@@ -1,0 +1,44 @@
+<div class="col-md-12">
+    <div class="item">
+        <div class="row">
+            <div class="col-md-1 item-remove">
+                <a class="button-delete" href="" onclick="return false;"  data-item="{{ item.id }}">
+                    <img src="{{ asset('img/delete.png') }}" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-md-1 item-image">
+                <img src="{{ asset('img/products/'~item.product.image) }}" class="img-responsive">
+            </div>
+            <div class="col-md-2 item-name">
+                {{ item.product.name }}
+            </div>
+            <div class="col-md-1 item-label item-qty-label">
+                Quantity:
+            </div>
+            <div class="col-md-1 item-qty">
+                <div class="btn-group group-qty">
+                    <button type="button" class="btn-qty dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ item.qty }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu list-qty">
+                        {% for t in 1..10 %}
+                            <li><a onclick="return false;"  data-item="{{ item.id }}" data-qty="{{ t }}" class="item-qty {{ t == item.qty ? 'active' : ''}}">{{ t }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1 item-label item-unit-price-label">
+                Item price:
+            </div>
+            <div class="col-md-2 item-unit-price-value">
+                {{ item.product.price|number_format(2, '.', ',')~' '~utils.currency_symbol }}
+            </div>
+            <div class="col-md-1 item-label item-total-label">
+                Item subtotal:
+            </div>
+            <div class="col-md-2 item-total-value">
+                {{ item.total|number_format(2, '.', ',')~' '~utils.currency_symbol }}
+            </div>
+        </div>
+    </div>
+</div>
